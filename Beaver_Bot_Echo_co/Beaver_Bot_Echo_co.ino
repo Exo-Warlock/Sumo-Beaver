@@ -7,9 +7,14 @@ void setup() {
   pinMode(6, OUTPUT);
   pinMode(ICE, OUTPUT);
   pinMode(MTB, OUTPUT);
+  pinMode(4, OUTPUT);
+  analogWrite(4, HIGH);
+  Serial.begin(9600);
 }
 
 void loop() {
+  Serial.println(analogRead(4));
+  delay(500);
   digitalWrite(SEA, HIGH);
   digitalWrite(MTA, LOW);
   digitalWrite(ICE, HIGH);
@@ -17,7 +22,7 @@ void loop() {
   delay(2000);
   digitalWrite(SEA, LOW);
   digitalWrite(MTA, HIGH);
-  digitalWrite(ICE, HIGH);
-  digitalWrite(MTB, LOW);
+  digitalWrite(ICE, LOW);
+  digitalWrite(MTB, HIGH);
   delay(2000);
 }

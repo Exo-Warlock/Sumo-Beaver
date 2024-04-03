@@ -3,8 +3,8 @@
 #define ICE 3
 #define MTB 7
 void setup() {
-  pinMode(2, OUTPUT);
-  pinMode(6, OUTPUT);
+  pinMode(SEA, OUTPUT);
+  pinMode(MTA, OUTPUT);
   pinMode(ICE, OUTPUT);
   pinMode(MTB, OUTPUT);
   pinMode(4, OUTPUT);

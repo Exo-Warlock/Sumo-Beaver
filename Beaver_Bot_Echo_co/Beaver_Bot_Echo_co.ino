@@ -26,3 +26,17 @@ void loop() {
   digitalWrite(MTB, HIGH);
   delay(2000);
 }
+
+int drive_Forward() {
+  digitalWrite(SEA, HIGH);
+  digitalWrite(MTA, LOW);
+  digitalWrite(ICE, HIGH);
+  digitalWrite(MTB, LOW);
+}
+
+int drive_Backwards() {
+  digitalWrite(SEA, LOW);
+  digitalWrite(MTA, HIGH);
+  digitalWrite(ICE, LOW);
+  digitalWrite(MTB, HIGH);
+}

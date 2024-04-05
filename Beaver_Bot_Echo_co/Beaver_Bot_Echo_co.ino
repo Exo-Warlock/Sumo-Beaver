@@ -2,6 +2,8 @@
 #define MTA 6
 #define ICE 3
 #define MTB 7
+
+
 void setup() {
   pinMode(SEA, OUTPUT);
   pinMode(MTA, OUTPUT);
@@ -13,18 +15,19 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(analogRead(4));
+  int Sensor = analogRead(4);
   delay(500);
-  digitalWrite(SEA, HIGH);
-  digitalWrite(MTA, LOW);
-  digitalWrite(ICE, HIGH);
-  digitalWrite(MTB, LOW);
-  delay(2000);
-  digitalWrite(SEA, LOW);
-  digitalWrite(MTA, HIGH);
-  digitalWrite(ICE, LOW);
-  digitalWrite(MTB, HIGH);
-  delay(2000);
+  if (Sensor < 500) {
+    digitalWrite(SEA, LOW);
+    digitalWrite(MTA, LOW);
+    digitalWrite(ICE, LOW);
+    digitalWrite(MTB, LOW);
+  } else {
+    digitalWrite(SEA, HIGH);
+    digitalWrite(MTA, LOW);
+    digitalWrite(ICE, HIGH);
+    digitalWrite(MTB, LOW);
+  }
 }
 
 int drive_Forward() {

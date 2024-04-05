@@ -23,10 +23,10 @@ void loop() {
     digitalWrite(ICE, LOW);
     digitalWrite(MTB, LOW);
   } else {
-    digitalWrite(SEA, HIGH);
-    digitalWrite(MTA, LOW);
-    digitalWrite(ICE, HIGH);
-    digitalWrite(MTB, LOW);
+    digitalWrite(SEA, LOW);
+    digitalWrite(MTA, HIGH);
+    digitalWrite(ICE, LOW);
+    digitalWrite(MTB, HIGH);
   }
 }
 

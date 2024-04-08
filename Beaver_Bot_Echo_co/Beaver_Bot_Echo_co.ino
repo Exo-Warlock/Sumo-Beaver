@@ -43,3 +43,17 @@ int drive_Backwards() {
   digitalWrite(ICE, LOW);
   digitalWrite(MTB, HIGH);
 }
+
+int drive_Right() {
+  digitalWrite(SEA, HIGH);
+  digitalWrite(MTA, LOW);
+  digitalWrite(ICE, LOW);
+  digitalWrite(MTB, LOW);
+}
+
+int drive_Left() {
+  digitalWrite(SEA, LOW);
+  digitalWrite(MTA, LOW);
+  digitalWrite(ICE, HIGH);
+  digitalWrite(MTB, LOW);
+}

@@ -30,28 +30,28 @@ void loop() {
   }
 }
 
-int drive_Forward() {
+int drive_Forward() {  //The function for driving the bot forward
   digitalWrite(SEA, HIGH);
   digitalWrite(MTA, LOW);
   digitalWrite(ICE, HIGH);
   digitalWrite(MTB, LOW);
 }
 
-int drive_Backwards() {
+int drive_Backwards() {  //The function for driving the bot backwards
   digitalWrite(SEA, LOW);
   digitalWrite(MTA, HIGH);
   digitalWrite(ICE, LOW);
   digitalWrite(MTB, HIGH);
 }
 
-int drive_Right() {
+int drive_Right() {  //The function for turning the bot right
   digitalWrite(SEA, HIGH);
   digitalWrite(MTA, LOW);
   digitalWrite(ICE, LOW);
   digitalWrite(MTB, LOW);
 }
 
-int drive_Left() {
+int drive_Left() {   //The function for turning the bot left
   digitalWrite(SEA, LOW);
   digitalWrite(MTA, LOW);
   digitalWrite(ICE, HIGH);

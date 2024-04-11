@@ -1,14 +1,14 @@
-#define SEA 2
-#define MTA 6
-#define ICE 3
-#define MTB 7
+#define RMB 2
+#define RMA 6
+#define LMA 3
+#define LMB 7
 
 
 void setup() {
-  pinMode(SEA, OUTPUT);
-  pinMode(MTA, OUTPUT);
-  pinMode(ICE, OUTPUT);
-  pinMode(MTB, OUTPUT);
+  pinMode(RMB, OUTPUT);
+  pinMode(RMA, OUTPUT);
+  pinMode(LMA, OUTPUT);
+  pinMode(LMB, OUTPUT);
   pinMode(4, OUTPUT);
   analogWrite(4, HIGH);
   Serial.begin(9600);
@@ -18,42 +18,39 @@ void loop() {
   int Sensor = analogRead(4);
   delay(500);
   if (Sensor < 500) {
-    digitalWrite(SEA, LOW);
-    digitalWrite(MTA, LOW);
-    digitalWrite(ICE, LOW);
-    digitalWrite(MTB, LOW);
+    digitalWrite(RMB, LOW);
+    digitalWrite(RMA, LOW);
+    digitalWrite(LMA, LOW);
+    digitalWrite(LMB, LOW);
   } else {
-    digitalWrite(SEA, LOW);
-    digitalWrite(MTA, HIGH);
-    digitalWrite(ICE, LOW);
-    digitalWrite(MTB, HIGH);
+    drive_Forward();
   }
 }
 
 int drive_Forward() {  //The function for driving the bot forward
-  digitalWrite(SEA, HIGH);
-  digitalWrite(MTA, LOW);
-  digitalWrite(ICE, HIGH);
-  digitalWrite(MTB, LOW);
+  digitalWrite(RMB, HIGH);
+  digitalWrite(RMA, LOW);
+  digitalWrite(LMA, HIGH);
+  digitalWrite(LMB, LOW);
 }
 
 int drive_Backwards() {  //The function for driving the bot backwards
-  digitalWrite(SEA, LOW);
-  digitalWrite(MTA, HIGH);
-  digitalWrite(ICE, LOW);
-  digitalWrite(MTB, HIGH);
+  digitalWrite(RMB, LOW);
+  digitalWrite(RMA, HIGH);
+  digitalWrite(LMA, LOW);
+  digitalWrite(LMB, HIGH);
 }
 
 int drive_Right() {  //The function for turning the bot right
-  digitalWrite(SEA, HIGH);
-  digitalWrite(MTA, LOW);
-  digitalWrite(ICE, LOW);
-  digitalWrite(MTB, LOW);
+  digitalWrite(RMB, HIGH);
+  digitalWrite(RMA, LOW);
+  digitalWrite(LMA, LOW);
+  digitalWrite(LMB, LOW);
 }
 
-int drive_Left() {   //The function for turning the bot left
-  digitalWrite(SEA, LOW);
-  digitalWrite(MTA, LOW);
-  digitalWrite(ICE, HIGH);
-  digitalWrite(MTB, LOW);
+int drive_Left() {  //The function for turning the bot left
+  digitalWrite(RMB, LOW);
+  digitalWrite(RMA, LOW);
+  digitalWrite(LMA, HIGH);
+  digitalWrite(LMB, LOW);
 }

@@ -11,15 +11,19 @@ void setup() {
   pinMode(LMB, OUTPUT);
   pinMode(4, OUTPUT);
   analogWrite(4, HIGH);
-  analogWrite(2,HIGH);
+  analogWrite(2, HIGH);
   Serial.begin(9600);
 }
 
 void loop() {
-  int sensor_r = analogRead(2);
-  int sensor_l = analogRead(4);
+  int sensor_r = analogRead(2);  //The right sensor goes to the blue wire
+  int sensor_l = analogRead(4);  //The left sensor goes to the green wire
+  Serial.println(sensor_l);
+  Serial.println(sensor_r);
   if (sensor_r < 500) {
     drive_Backwards();
+    delay(1000);
+    drive_Left();
     delay(1000);
 
   } else {
@@ -28,15 +32,15 @@ void loop() {
 }
 
 int drive_Forward() {  //The function for driving the bot forward
-  digitalWrite(RMB, HIGH);
-  digitalWrite(RMA, LOW);
+  digitalWrite(RMB, LOW);
+  digitalWrite(RMA, HIGH);
   digitalWrite(LMA, HIGH);
   digitalWrite(LMB, LOW);
 }
 
 int drive_Backwards() {  //The function for driving the bot backwards
-  digitalWrite(RMB, LOW);
-  digitalWrite(RMA, HIGH);
+  digitalWrite(RMB, HIGH);
+  digitalWrite(RMA, LOW);
   digitalWrite(LMA, LOW);
   digitalWrite(LMB, HIGH);
 }

@@ -1,7 +1,7 @@
-#define RMB 2
-#define RMA 6
-#define LMA 3
-#define LMB 7
+#define RMB 2 //B IN2
+#define RMA 6 //B IN1
+#define LMA 3 //A IN1
+#define LMB 7 //A IN2
 
 
 void setup() {
@@ -18,16 +18,15 @@ void setup() {
 void loop() {
   int sensor_r = analogRead(2);  //The right sensor goes to the blue wire
   int sensor_l = analogRead(4);  //The left sensor goes to the green wire
-  Serial.println(sensor_l);
+ // Serial.println(sensor_l);
   Serial.println(sensor_r);
   if (sensor_r < 500) {
     drive_Backwards();
-    delay(1000);
+    delay(3000);
     drive_Left();
-    delay(1000);
-
+    delay(3000);
   } else {
-    drive_Forward();
+  drive_Forward();
   }
 }
 
